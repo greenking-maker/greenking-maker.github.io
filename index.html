@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>基于古籍理论的中药药对检索数据库</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.22.1/bootstrap-table.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">基于古籍理论的中药药对检索数据库</h2>
+    <p class="text-center text-muted mb-4">依托神农本草经、伤寒论、金匮要略、本草纲目等古籍构建</p>
+
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="搜索药名、功效、主治、古籍出处...">
+
+    <table id="table" data-toggle="table" data-search="true" data-striped="true">
+        <thead>
+            <tr>
+                <th data-field="id">ID</th>
+                <th data-field="drugA">药物A</th>
+                <th data-field="drugB">药物B</th>
+                <th data-field="source">古籍出处</th>
+                <th data-field="natureA">A性味</th>
+                <th data-field="natureB">B性味</th>
+                <th data-field="relation">七情配伍</th>
+                <th data-field="role">君臣佐使</th>
+                <th data-field="effect">传统功效</th>
+                <th data-field="indication">主治病证</th>
+                <th data-field="forbidden">配伍禁忌</th>
+                <th data-field="compounds">核心活性成分</th>
+            </tr>
+        </thead>
+<tbody>
+    <tr>
+        <td>1</td>
+        <td>桂枝</td>
+        <td>白芍</td>
+        <td>伤寒论</td>
+        <td>辛甘温</td>
+        <td>苦酸微寒</td>
+        <td>相须</td>
+        <td>君-臣</td>
+        <td>调和营卫、解肌发表</td>
+        <td>外感风寒、营卫不和</td>
+        <td>否</td>
+        <td>桂皮醛、芍药苷</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>麻黄</td>
+        <td>桂枝</td>
+        <td>伤寒论</td>
+        <td>辛微苦温</td>
+        <td>辛甘温</td>
+        <td>相须</td>
+        <td>君-臣</td>
+        <td>发汗解表、宣肺平喘</td>
+        <td>风寒表实、咳喘上气</td>
+        <td>否</td>
+        <td>麻黄碱、桂皮醛</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>柴胡</td>
+        <td>黄芩</td>
+        <td>伤寒论</td>
+        <td>苦辛微寒</td>
+        <td>苦寒</td>
+        <td>相使</td>
+        <td>君-臣</td>
+        <td>和解少阳、清泄郁热</td>
+        <td>少阳寒热、胸胁苦满</td>
+        <td>否</td>
+        <td>柴胡皂苷、黄芩苷</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>黄芪</td>
+        <td>当归</td>
+        <td>本草纲目</td>
+        <td>甘温</td>
+        <td>甘辛温</td>
+        <td>相使</td>
+        <td>君-臣</td>
+        <td>益气生血、补气活血</td>
+        <td>气虚血瘀、血虚萎黄、癥瘕积聚</td>
+        <td>否</td>
+        <td>黄芪甲苷、阿魏酸</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>黄连</td>
+        <td>黄芩</td>
+        <td>金匮要略</td>
+        <td>苦寒</td>
+        <td>苦寒</td>
+        <td>相须</td>
+        <td>臣-佐</td>
+        <td>清热燥湿、泻火解毒</td>
+        <td>湿热内蕴、疮痈肿毒</td>
+        <td>否</td>
+        <td>小檗碱、黄芩苷</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>人参</td>
+        <td>白术</td>
+        <td>神农本草经</td>
+        <td>甘微苦微温</td>
+        <td>苦甘温</td>
+        <td>相须</td>
+        <td>君-臣</td>
+        <td>益气健脾、补中固本</td>
+        <td>脾胃气虚、体虚乏力</td>
+        <td>否</td>
+        <td>人参皂苷、白术内酯</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>陈皮</td>
+        <td>半夏</td>
+        <td>金匮要略</td>
+        <td>辛苦温</td>
+        <td>辛温</td>
+        <td>相使</td>
+        <td>佐-使</td>
+        <td>理气健脾、燥湿化痰</td>
+        <td>痰湿壅滞、咳嗽痰多</td>
+        <td>否</td>
+        <td>橙皮苷、半夏生物碱</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>丹参</td>
+        <td>川芎</td>
+        <td>本草纲目</td>
+        <td>苦微寒</td>
+        <td>辛温</td>
+        <td>相须</td>
+        <td>臣-佐</td>
+        <td>活血化瘀、行气止痛</td>
+        <td>血瘀经闭、癥瘕腹痛</td>
+        <td>否</td>
+        <td>丹参酮、阿魏酸</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>金银花</td>
+        <td>连翘</td>
+        <td>温病条辨</td>
+        <td>甘寒</td>
+        <td>苦微寒</td>
+        <td>相须</td>
+        <td>君-臣</td>
+        <td>清热解毒、疏散风热</td>
+        <td>外感风热、疮痈肿毒</td>
+        <td>否</td>
+        <td>绿原酸、连翘苷</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>枸杞子</td>
+        <td>菊花</td>
+        <td>本草纲目</td>
+        <td>甘平</td>
+        <td>甘苦微寒</td>
+        <td>相使</td>
+        <td>君-佐</td>
+        <td>滋补肝肾、清肝明目</td>
+        <td>肝肾阴虚、目暗昏花</td>
+        <td>否</td>
+        <td>枸杞多糖、木犀草素</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>附子</td>
+        <td>干姜</td>
+        <td>伤寒论</td>
+        <td>辛大热</td>
+        <td>辛热</td>
+        <td>相须</td>
+        <td>君-臣</td>
+        <td>回阳救逆、温中散寒</td>
+        <td>亡阳厥逆、脘腹冷痛</td>
+        <td>否</td>
+        <td>乌头碱、姜辣素</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>茯苓</td>
+        <td>猪苓</td>
+        <td>神农本草经</td>
+        <td>甘淡平</td>
+        <td>甘淡平</td>
+        <td>相须</td>
+        <td>佐-佐</td>
+        <td>利水渗湿、健脾安神</td>
+        <td>水湿内停、水肿胀满</td>
+        <td>否</td>
+        <td>茯苓多糖、猪苓多糖</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>麦冬</td>
+        <td>五味子</td>
+        <td>千金要方</td>
+        <td>甘微苦微寒</td>
+        <td>酸甘温</td>
+        <td>相使</td>
+        <td>臣-佐</td>
+        <td>养阴生津、敛肺止汗</td>
+        <td>气阴两虚、久咳虚喘</td>
+        <td>否</td>
+        <td>麦冬皂苷、五味子素</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>莪术</td>
+        <td>三棱</td>
+        <td>本草纲目</td>
+        <td>辛苦温</td>
+        <td>苦平</td>
+        <td>相须</td>
+        <td>臣-佐</td>
+        <td>破血行气、消癥散结</td>
+        <td>癥瘕积聚、血瘀经闭</td>
+        <td>否</td>
+        <td>莪术醇、三棱挥发油</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>山楂</td>
+        <td>神曲</td>
+        <td>本草备要</td>
+        <td>酸甘微温</td>
+        <td>甘辛温</td>
+        <td>相须</td>
+        <td>佐-使</td>
+        <td>消食化积、和胃健脾</td>
+        <td>食积停滞、脘腹胀满</td>
+        <td>否</td>
+        <td>山楂黄酮、神曲消化酶</td>
+    </tr>
+</tbody>
+    </table>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-table/1.22.1/bootstrap-table.min.js"></script>
+<script>
+    $('#searchInput').keyup(function () {
+        $('#table').bootstrapTable('resetSearch', $(this).val());
+    });
+</script>
+</body>
+</html>
